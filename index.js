@@ -166,6 +166,8 @@ const replacements = [
   { bad: 'pä±', good: 'pı' },
   { bad: 'nä±', good: 'nı' },
   { bad: 'sä±', good: 'sı' },
+  { bad: 'ê¹', good: 'ч' },
+  { bad: 'êº', good: 'я' }
 ];
 
 const fixEncoding = (str) => {
