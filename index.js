@@ -161,7 +161,11 @@ const replacements = [
   { bad: 'à¤¯', good: 'य' },
   { bad: 'à¤¾', good: 'ा' },
   { bad: 'ã—', good: '×' }, // Common misencoding of '×'
-  // { bad: 'ï¿½', good: '' }, // Default replacement for unidentified misencoding
+  // { bad: 'ï¿½', good: '' }, ezeket ki kell hagyni, mert többféle karaktert is jelölhetnek (és mert a cím vagy szerző így van bent a rendszerben) - javasolt a DB manuális javítása
+  { bad: 'ä±', good: 'ı' },
+  { bad: 'pä±', good: 'pı' },
+  { bad: 'nä±', good: 'nı' },
+  { bad: 'sä±', good: 'sı' },
 ];
 
 const fixEncoding = (str) => {
