@@ -168,7 +168,9 @@ const replacements = [
   { bad: 'sä±', good: 'sı' },
   { bad: 'ê¹', good: 'ч' },
   { bad: 'êº', good: 'я' },
-  { bad: 'ï·º', good: 'ﷺ' }  // Iszlám karakter javítás (Muhammad Prophet Symbol)
+  { bad: 'ï·º', good: 'ﷺ' },  // Iszlám karakter javítás (Muhammad Prophet Symbol)
+  { bad: 'Ã¦', good: 'æ' },
+  { bad: 'Ã¸', good: 'ø' }
 ];
 
 const fixEncoding = (str) => {
