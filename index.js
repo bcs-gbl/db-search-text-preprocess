@@ -206,9 +206,12 @@ const removeDiacritics = (str) => {
   return processedParts.join('');
 };
 
-// hibás karakterek kiszűrése
+// hibás karakterek kiszűrése 
+//  !! Nagyon fontos, hogy ez azután fusson le, amiután az encode-olási problémákat javítottuk !!
+//  !! és még az előtt, hogy a duplikált whitespace-eket eltávolító rész futna. !!
 const removeInvalidCharacters = (str) => {
-  return str.replace(/[-_~`!@#$%^&*()+={}[\];:'"<>.,/\\?«»%|^„–]/g, ' ').replace(/ {2}/g, ' ').trim();
+  // return str.replace(/[-_~`!@#$%^&*()+={}[\];:'"<>.,/\\?«»%|^„–]/g, ' ').replace(/ {2}/g, ' ').trim();
+  return str.replace(/[-_~`!@#$%^&*()+={}[\];:'"<>.,/\\?«»%|^„–’‚‘”“~`¨¸—‹›ˆ…€¢¥§©®µ¶·•¿¡¦°±²³´¹º¼½¾˘˙˛˜˝ˇ™]/g, ' ').replace(/ {2}/g, ' ').trim();
 };
 
 // Hibás karakterek eltávolítása
