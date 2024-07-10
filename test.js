@@ -1,11 +1,38 @@
-const { cleanText, fixEncoding, removeDiacritics, removeInvalidCharacters, removeInvalidEncoding } = require('./index');
+const { cleanText } = require('./index');
 
-const example1 = "Leï¿½Ons De Clinique Mï¿½Dicale, Faites Ï¿½ L'hï¿½Pital De La Charitï¿½";
-const example2 = "Salluste, Jules Cï¿½Sar, C. Vellï¿½Ius Paterculus Et A. Florus (Ï¿½D.1865)";
-const example3 = "pä±Narbasä± (Sitio Arqueologico)";
-const example4 = "Egyéb példa ékezetes szavakkal";
+const examples = [
+  "Leï¿½Ons De Clinique Mï¿½Dicale, Faites Ï¿½ L'hï¿½Pital De La Charitï¿½",
+  "Salluste, Jules Cï¿½Sar, C. Vellï¿½Ius Paterculus Et A. Florus (Ï¿½D.1865)",
+  "pä±Narbasä± (Sitio Arqueologico)",
+  "Egyéb példa ékezetes szavakkal",
+  "KÃ¤stner, Erich",
+  "GarcÃ­a MÃ¡rquez, Gabriel",
+  "FranÃ§ois Hollande",
+  "Björk Guðmundsdóttir",
+  "São Paulo",
+  "René Descartes",
+  "Göteborg",
+  "Curaçao",
+  "Håkan Nesser",
+  "České Budějovice",
+  "Øystein Sunde",
+  "Jürgen Klopp",
+  "Ångström",
+  "Grønland",
+  "München",
+  "Löwe",
+  "Île-de-France",
+  "Fañch",
+  "Łódź",
+  "Dvořák",
+  "Smørrebrød",
+  "Ærø",
+  "Tōkyō",
+  "Beijing 北京",
+  "Москва",
+  "Αθήνα"
+];
 
-console.log(cleanText(example1));
-console.log(cleanText(example2));
-console.log(cleanText(example3));
-console.log(cleanText(example4));
+examples.forEach(example => {
+  console.log(cleanText(example));
+});
