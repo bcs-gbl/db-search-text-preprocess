@@ -65,6 +65,11 @@ const removeInvalidEncoding = (str) => {
   return str.replace(invalidChars, '');
 };
 
+// Remove stop words
+const removeStopWords = (str) => {
+  return str.replace(/\bthe\b/gi, '').trim();
+};
+
 // Clean text
 const cleanText = (text) => {
   let cleanedText = text;
@@ -81,7 +86,10 @@ const cleanText = (text) => {
   // Removes all invalid characters
   cleanedText = removeInvalidCharacters(cleanedText);
 
-  // Removes duplicate spaces:
+  // Remove stop words like "the"
+  cleanedText = removeStopWords(cleanedText);
+
+  // Removes spaces:
   cleanedText = cleanedText.replace(/ {2}/g, ' ').trim();
 
   return cleanedText;
