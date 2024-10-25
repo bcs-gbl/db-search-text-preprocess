@@ -55,7 +55,6 @@ const removeDiacritics = (str) => {
 // !! It is very important that this runs after encoding problems have been fixed !!
 // !! and before the part that removes duplicate whitespaces runs. !!
 const removeInvalidCharacters = (str) => {
-  // return str.replace(/[-_~`!@#$%^&*()+={}[\];:'"<>.,/\\?«»%|^„–]/g, ' ').replace(/ {2}/g, ' ').trim();
   return str.replace(/[-_~`!@#$%^&*()+={}[\];:'"<>.,/\\?«»%|^„–’‚‘”“~`¨¸—‹›ˆ…€¢¥§©®µ¶·•¿¡¦°±²³´¹º¼½¾˘˙˛˜˝ˇ™]/g, ' ').replace(/ {2}/g, ' ').trim();
 };
 
@@ -66,8 +65,14 @@ const removeInvalidEncoding = (str) => {
 };
 
 // Remove stop words
+// const removeStopWords = (str) => {
+//   return str.replace(/\bthe\b/gi, '').trim();
+// };
 const removeStopWords = (str) => {
-  return str.replace(/\bthe\b/gi, '').trim();
+  // const stopWords = ['the', 'and', 'is', 'in', 'at', 'of', 'a', 'az', 'ez', 'van', 'és'];
+  const stopWords = ['the', 'a', 'an'];
+  const regex = new RegExp(`\\b(${stopWords.join('|')})\\b`, 'gi');
+  return str.replace(regex, '').replace(/\s+/g, ' ').trim();
 };
 
 // Clean text
