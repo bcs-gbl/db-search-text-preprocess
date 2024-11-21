@@ -1,3 +1,4 @@
+const replacementsCyrillicHtmlCodes = require('./replacements-cyrillic-html-codes');
 const replacementsLatin = require('./replacements-latin');
 const replacementsDevanagari = require('./replacements-devanagari');
 const replacementsCyrillic = require('./replacements-cyrillic');
@@ -8,6 +9,7 @@ const replacementsHindi = require('./replacements-hindi');
 const replacementsMisc = require('./replacements-misc');
 
 const replacements = [
+  ...replacementsCyrillicHtmlCodes,
   ...replacementsLatin,
   ...replacementsDevanagari,
   ...replacementsCyrillic,
