@@ -67,12 +67,17 @@ const replacementsCyrillicHtmlCodes = [
   ['&#1103;', 'я'],
   ['&#1105;', 'ё'],
   ['&#1110;', 'і'],
+  ['&#1030;', 'І'],
   ['&#1028;', 'Є'],
   ['&#1108;', 'є'],
   ['&#1031;', 'Ї'],
   ['&#1111;', 'ї'],
   ['&#1168;', 'Ґ'],
-  ['&#1169;', 'ґ']
+  ['&#1169;', 'ґ'],
+  ['&#1038;', 'Ў'], // Nagybetű "Short U"
+  ['&#1118;', 'ў'], // Kisbetű "Short U"
+  ['&#1178;', 'Қ'], // Cirill nagybetű "Ka with descender"
+  ['&#1179;', 'қ']  // Cirill kisbetű "Ka with descender"
 ];
 
 module.exports = replacementsCyrillicHtmlCodes;
