@@ -79,7 +79,11 @@ const replacementsCyrillicHtmlCodes = [
   ['&#1178;', 'Қ'],
   ['&#1179;', 'қ'],
   ['&#1123;', 'ѣ'],
-  ['&#1122;', 'Ѣ']
+  ['&#1122;', 'Ѣ'],
+  ['&#1202;', 'Ҳ'],
+  ['&#1203;', 'ҳ'],
+  ['&#1250;', 'Ӓ'],
+  ['&#1251;', 'ӓ']
 ];
 
 module.exports = replacementsCyrillicHtmlCodes;

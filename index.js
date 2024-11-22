@@ -1,4 +1,5 @@
-const replacementsCyrillicHtmlCodes = require('./replacements-cyrillic-html-codes');
+
+// const replacementsCyrillicHtmlCodes = require('./replacements-cyrillic-html-codes');
 const replacementsLatin = require('./replacements-latin');
 const replacementsDevanagari = require('./replacements-devanagari');
 const replacementsCyrillic = require('./replacements-cyrillic');
@@ -7,9 +8,10 @@ const replacementsThai = require('./replacements-thai');
 const replacementsTamil = require('./replacements-tamil');
 const replacementsHindi = require('./replacements-hindi');
 const replacementsMisc = require('./replacements-misc');
+const he = require('he');
 
 const replacements = [
-  ...replacementsCyrillicHtmlCodes,
+  // ...replacementsCyrillicHtmlCodes,
   ...replacementsLatin,
   ...replacementsDevanagari,
   ...replacementsCyrillic,
@@ -19,6 +21,17 @@ const replacements = [
   ...replacementsHindi,
   ...replacementsMisc,
 ];
+
+// HTML entity decode
+// const replaceHtmlSpecialChars = (str) => {
+//   let decodedString = he.decode(str);
+//   // handling missing ; from HTML entity
+//   const regexWithoutSemicolon = /&#(\d+)(?!;)/g; // Match `&#...` without ;
+//   decodedString = decodedString.replace(regexWithoutSemicolon, (match, num) => {
+//     return String.fromCharCode(num);
+//   });
+//   return decodedString;
+// };
 
 const fixEncoding = (str) => {
   replacements.forEach(([bad, good]) => {
@@ -81,8 +94,11 @@ const removeStopWords = (str) => {
 const cleanText = (text) => {
   let cleanedText = text;
 
+  // decode html entity chars
+  // cleanedText = replaceHtmlSpecialChars(cleanedText);
+
   // This completely removes incorrectly encoded characters (so there will be no unexpected results with removeDiacritics):
-  cleanedText = removeInvalidEncoding(text);
+  cleanedText = removeInvalidEncoding(cleanedText);
 
   // Fix encoding errors:
   cleanedText = fixEncoding(cleanedText);                                                  

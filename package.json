@@ -1,6 +1,6 @@
 {
   "name": "db-search-text-preprocess",
-  "version": "1.1.7",
+  "version": "1.2.1",
   "description": "A library for cleaning and fixing text for search fields",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bcs-gbl/db-search-text-preprocess.git"
+    "url": "git+https://github.com/bcs-gbl/db-search-text-preprocess.git"
   },
   "keywords": [
     "text",
@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/bcs-gbl/db-search-text-preprocess/issues"
   },
-  "homepage": "https://github.com/bcs-gbl/db-search-text-preprocess#readme"
+  "homepage": "https://github.com/bcs-gbl/db-search-text-preprocess#readme",
+  "dependencies": {
+    "he": "^1.2.0"
+  }
 }
